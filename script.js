@@ -83,7 +83,7 @@ const checkVictory = setInterval(function () {
         player.classList.add('playerWin');
         setTimeout(function () {
             player.className = '';
-            alert(`Merci d'avoir joué, félicitations !`);
+            alert(`Allez les XIII`);
         }, 8000);
         clearInterval(checkVictory);
     }
