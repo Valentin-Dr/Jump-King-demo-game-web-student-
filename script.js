@@ -1,3 +1,4 @@
+// Fonctions pour raccourcir le code quand je change les classes
 function playerAddClass(classe) {
     player.classList.add(classe);
 };
@@ -5,6 +6,10 @@ function playerAddClass(classe) {
 function playerRemoveClass(classe) {
     player.classList.remove(classe);
 };
+
+const gameOver = document.getElementById('gameOver');
+
+const game = document.getElementById('game');
 
 // Je récupère mon ID player
 const player = document.getElementById('player');
@@ -27,6 +32,7 @@ scoreAmount.textContent = score;
 scores.appendChild(scoreAmount);
 
 // Fonction pour faire sauter le joueur
+// Que je mets en onclick sur la page html
 const jump = () => {
     playerRemoveClass('playerRun');
     if(player.classList != 'playerJump') {
@@ -51,6 +57,7 @@ const checkDeath = setInterval(function(){
     let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue('left'));
     if (enemyLeft<32 && enemyLeft >0 && playerTop >= 172) {
         player.className = '';
+        gameOver.classList.add('gameOverAnimate');
         playerAddClass('playerDeath');
         enemy.style.display = 'none';
         clearInterval(countScores);

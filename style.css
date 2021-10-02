@@ -3,6 +3,7 @@
     margin: 0px;
 }
 
+/* Jeu */
 #score {
     margin: auto;
     margin-top: 50px;
@@ -25,9 +26,26 @@
     width: 700px;
     height: 350px;
     border: 1px black solid;
-    background: url('sprites/backgroundgame.jpg')
+    background: url('sprites/backgroundgame.jpg');
 }
 
+#gameOver {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    width: 700px;
+    text-shadow: 0px 0px 4px black;
+    position:absolute;
+    top: 80px;
+    text-align: center;
+    font-size: 5em;
+    opacity: 0%;
+}
+
+.gameOverAnimate {
+    animation: opacity 2s;
+}
+
+/* Joueur */
 #player {
     height: 32px;
     width: 32px;
@@ -51,6 +69,7 @@
     animation: playerDeath 2s steps(8);
 }
 
+/* Ennemis */
 #enemy {
     height: 48px;
     width: 48px;
@@ -61,6 +80,11 @@
     animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
 }
 
+/* Animations */
+@keyframes opacity {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
 
 @keyframes playerDeath {
     0% {background-position: 0px;}
