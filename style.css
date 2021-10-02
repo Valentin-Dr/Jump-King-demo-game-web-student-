@@ -80,34 +80,65 @@
 
 .enemy1 {
     background: url('sprites/monstersRun/Hyena_walk.png');
-    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+    /* animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear; */
 }
 
 .enemy2 {
     background: url('sprites/monstersRun/Deceased_walk.png');
-    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+    /* animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear; */
 }
 
 .enemy3 {
     background:url('sprites/monstersRun/Mummy_walk.png');
-    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+    /* animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear; */
 }
 
 .enemy4 {
     background: url('sprites/monstersRun/Scorpio_walk.png');
-    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
+    /* animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear; */
 }
 
 .enemy5 {
     background: url('sprites/monstersRun/Snake_walk.png');
-    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
+    /* animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear; */
 }
 
 .enemy6 {
     background: url('sprites/monstersRun/Vulture_walk.png');
+    /* animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear; */
+}
+
+.enemy6SpritesSlow {
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1500ms infinite linear;
+}
+
+.enemy4SpritesSlow {
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1500ms infinite linear;
+}
+
+.enemy6SpritesMedium {
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy4SpritesMedium {
     animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
 }
 
+.enemy6SpritesFast {
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 800ms infinite linear;
+}
+
+.enemy4SpritesFast {
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 800ms infinite linear;
+}
+
+.enemy6SpritesImpossible {
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 600ms infinite linear;
+}
+
+.enemy4SpritesImpossible {
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 600ms infinite linear;
+}
 /* Animations */
 @keyframes opacity {
     0% {opacity: 0%;}
