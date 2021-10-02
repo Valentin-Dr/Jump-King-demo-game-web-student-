@@ -5,6 +5,8 @@ Avoid every enemies, press F5 to restart the game
 
 <img src="https://i.imgur.com/2GwyMgD.gif"/>
 
+## Try to avoid enemies for 100 seconds !
+
 ## What I plan to add
 - Scores (DONE)
 - Multiple enemies (DONE, every time you refresh though)
