@@ -55,9 +55,11 @@ const countScores = setInterval(function(){
     scoreAmount.textContent = score;  
 },1000)
 
+// Définis mon ennemi de départ
 let starterEnemy = randomIntFromInterval(1,6);
 enemy.classList.add(`enemy${starterEnemy}`);
 
+// Change l'ennemi toutes les secondes
 const randomEnemy = setInterval(function() {
     let oneToSix = randomIntFromInterval(1,6);
     enemy.className = '';
