@@ -7,8 +7,9 @@ Avoid every enemies, press F5 to restart the game
 
 ## What I plan to add
 - Scores (DONE)
-- Multiple enemies (DONE)
-- Lower enemy speed at the beginning
-- Higher enemy speed every 10 monsters
+- Multiple enemies (DONE, every time you refresh though)
+- Lower enemy speed at the beginning (DONE)
+- Higher enemy speed every 10 monsters (DONE but every 20 points)
 - Death animation (DONE)
-- ...
+- Victory screen (DONE, at 100 points)
+- ...........
