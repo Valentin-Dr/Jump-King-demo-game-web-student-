@@ -79,12 +79,7 @@
 }
 
 .enemy1 {
-    height: 48px;
-    width: 48px;
     background: url('sprites/monstersRun/Hyena_walk.png');
-    position: relative;
-    top: 171px;
-    left: 652px;
     animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
 }
 
