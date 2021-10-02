@@ -81,5 +81,3 @@ const checkDeath = setInterval(function(){
         },2000);
     }
 }, 10);
-
-
