@@ -1,3 +1,8 @@
+// RNG de 1 à 6
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  };
+
 // Fonctions pour raccourcir le code quand je change les classes
 function playerAddClass(classe) {
     player.classList.add(classe);
@@ -49,6 +54,15 @@ const countScores = setInterval(function(){
     score++;
     scoreAmount.textContent = score;  
 },1000)
+
+let starterEnemy = randomIntFromInterval(1,6);
+enemy.classList.add(`enemy${starterEnemy}`);
+
+const randomEnemy = setInterval(function() {
+    let oneToSix = randomIntFromInterval(1,6);
+    enemy.className = '';
+    enemy.classList.add(`enemy${oneToSix}`);
+}, 1000)
 
 // Vérifie si l'ennemi touche le joueur toutes les 10ms
 // Lance l'animation de mort si c'est le cas

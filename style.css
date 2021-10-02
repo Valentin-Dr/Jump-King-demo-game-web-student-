@@ -73,11 +73,44 @@
 #enemy {
     height: 48px;
     width: 48px;
-    background: url('sprites/Hyena_walk.png');
+    position: relative;
+    top: 171px;
+    left: 652px;
+}
+
+.enemy1 {
+    height: 48px;
+    width: 48px;
+    background: url('sprites/monstersRun/Hyena_walk.png');
     position: relative;
     top: 171px;
     left: 652px;
     animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy2 {
+    background: url('sprites/monstersRun/Deceased_walk.png');
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy3 {
+    background:url('sprites/monstersRun/Mummy_walk.png');
+    animation: spriteEnemy 0.4s steps(6) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy4 {
+    background: url('sprites/monstersRun/Scorpio_walk.png');
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy5 {
+    background: url('sprites/monstersRun/Snake_walk.png');
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
+}
+
+.enemy6 {
+    background: url('sprites/monstersRun/Vulture_walk.png');
+    animation: spriteEnemy4Sprites 0.4s steps(4) infinite, enemyRun 1s infinite linear;
 }
 
 /* Animations */
@@ -106,6 +139,11 @@
 @keyframes spriteEnemy {
     0% {background-position: 0px;}
     100% {background-position: -288px;}
+}
+
+@keyframes spriteEnemy4Sprites {
+    0%{background-position: 0px;}
+    100%{background-position: -192px;}
 }
 
 /* Déplace le monstre de droite à gauche */
