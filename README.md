@@ -3,7 +3,7 @@
 ## Left click to jump
 Avoid every enemies, press F5 to restart the game
 
-![Animation de mort] (https://i.imgur.com/adv4cKn.gif)
+<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="700" height="350" />
 
 ## What I plan to add
 - Scores (DONE)
