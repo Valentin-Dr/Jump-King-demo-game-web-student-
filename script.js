@@ -72,18 +72,20 @@ enemy.classList.add(`enemy${starterEnemy}`);
 // }, 1000)
 
 // Fait gagner le joueur s'il arrive à 100
-const checkVictory = setInterval(function() {
+const checkVictory = setInterval(function () {
     if (scoreAmount.textContent === '100') {
         gameOver.textContent = 'VICTOIRE BRAVO';
-            gameOver.classList.add('gameOverAnimate');
-            enemy.style.display = 'none';
-            clearInterval(enemySpeed);
-            clearInterval(countScores);
-            setTimeout(function () {
-                player.className = '';
-                alert(`Merci d'avoir joué, félicitations !`);
-            }, 2000);
-            clearInterval(checkVictory);
+        gameOver.classList.add('gameOverAnimate');
+        enemy.style.display = 'none';
+        clearInterval(enemySpeed);
+        clearInterval(countScores);
+        player.className = '';
+        player.classList.add('playerWin');
+        setTimeout(function () {
+            player.className = '';
+            alert(`Merci d'avoir joué, félicitations !`);
+        }, 8000);
+        clearInterval(checkVictory);
     }
 }, 10)
 
@@ -98,7 +100,7 @@ const enemySpeed = setInterval(function () {
             enemyClass('enemy6SpritesMedium', 'enemy6SpritesFast');
         } else if (scoreAmount.textContent >= 60 && scoreAmount.textContent < 100) {
             enemyClass('enemy6SpritesFast', 'enemy6SpritesImpossible');
-        } 
+        }
     } else if (enemy.classList.contains('enemy4') || enemy.classList.contains('enemy5') || enemy.classList.contains('enemy6')) {
         if (scoreAmount.textContent < 20) {
             enemy.classList.add('enemy4SpritesSlow');
@@ -108,7 +110,7 @@ const enemySpeed = setInterval(function () {
             enemyClass('enemy4SpritesMedium', 'enemy4SpritesFast');
         } else if (scoreAmount.textContent >= 60 && scoreAmount.textContent < 100) {
             enemyClass('enemy4SpritesFast', 'enemy4SpritesImpossible');
-        } 
+        }
     }
 }, 10)
 
