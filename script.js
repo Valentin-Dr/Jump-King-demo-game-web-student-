@@ -1,27 +1,64 @@
+function playerAddClass(classe) {
+    player.classList.add(classe);
+};
+
+function playerRemoveClass(classe) {
+    player.classList.remove(classe);
+};
+
 // Je récupère mon ID player
 const player = document.getElementById('player');
 
 // Je récupère mon ID enemy
 const enemy = document.getElementById('enemy');
 
+// Je récupère mon ID score
+const scores = document.getElementById('score');
+
+// Je crée mon score
+let score = 0;
+
+let scoreAmount = document.createElement('p');
+
+scoreAmount.classList.add('scoreFont')
+
+scoreAmount.textContent = score;
+
+scores.appendChild(scoreAmount);
+
 // Fonction pour faire sauter le joueur
 const jump = () => {
-    player.classList.remove('playerRun');
+    playerRemoveClass('playerRun');
     if(player.classList != 'playerJump') {
-    player.classList.add('playerJump');
+    playerAddClass('playerJump');
     }
     setTimeout(function() {
-        player.classList.add('playerRun');
-        player.classList.remove('playerJump');
+        playerAddClass('playerRun');
+        playerRemoveClass('playerJump');
     }, 500)
 };
 
+// Ajoute un point quand l'ennemi sort de l'écran
+const countScores = setInterval(function(){
+    score++;
+    scoreAmount.textContent = score;  
+},1000)
+
 // Vérifie si l'ennemi touche le joueur toutes les 10ms
+// Lance l'animation de mort si c'est le cas
 const checkDeath = setInterval(function(){
     let playerTop = parseInt(window.getComputedStyle(player).getPropertyValue('top'));
     let enemyLeft = parseInt(window.getComputedStyle(enemy).getPropertyValue('left'));
     if (enemyLeft<32 && enemyLeft >0 && playerTop >= 172) {
+        player.className = '';
+        playerAddClass('playerDeath');
         enemy.style.display = 'none';
-        alert(`Merci d'avoir essayé :)`);
+        clearInterval(countScores);
+        setTimeout(function(){
+            player.className = '';
+            alert(`Merci d'avoir essayé :)`);
+        },2000);
     }
-}, 10)
+}, 10);
+
+
