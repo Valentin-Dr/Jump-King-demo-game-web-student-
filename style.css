@@ -7,8 +7,10 @@
 }
 
 body {
-    background: url('https://cdna.artstation.com/p/assets/images/images/026/814/248/large/slotopaint-gamedesign-fruits.jpg?1589812208');
-    background-size: cover;
+    height: 100vh;
+    background: rgb(160,230,255);
+    background: linear-gradient(180deg, rgba(160,230,255,1) 0%, rgba(41,77,93,1) 100%); 
+    background-size: contain;
 }
 
 /* Jeu */
@@ -86,6 +88,7 @@ body {
 
 #game {
     margin: auto;
+    margin-top: 50px;
     width: 700px;
     height: 350px;
     border: 1px black solid;
