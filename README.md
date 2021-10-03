@@ -15,3 +15,5 @@ Avoid every enemies, press F5 to restart the game
 - Death animation (DONE)
 - Victory screen (DONE, at 100 points)
 - ...........
+- Added character selection screen
+- Added a button to launch the game
