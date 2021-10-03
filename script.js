@@ -124,7 +124,7 @@ enemy.classList.add(`enemy${starterEnemy}`);
 
 // Fait gagner le joueur s'il arrive à 100
 const checkVictory = setInterval(function () {
-    if (scoreAmount.textContent === '100') {
+    if (scoreAmount.textContent === '3') {
         gameOver.textContent = 'VICTOIRE BRAVO';
         gameOver.classList.add('gameOverAnimate');
         enemy.style.display = 'none';

@@ -1,6 +1,14 @@
 * {
     padding: 0px;
     margin: 0px;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    font-family: 'Abel', sans-serif;
+}
+
+body {
+    background: url('https://cdna.artstation.com/p/assets/images/images/026/814/248/large/slotopaint-gamedesign-fruits.jpg?1589812208');
+    background-size: cover;
 }
 
 /* Jeu */
@@ -26,13 +34,16 @@
 }
 
 #startGame {
+    background-color: transparent;
     display: block;
     width: 300px;
     margin: auto;
     margin-top: 50px;
     font-size: 3em;
     text-align: center;
+    border-radius: 30px;
     border: 1px black solid;
+    
 }
 
 #choosePlayer {
@@ -55,6 +66,7 @@
     border: 1px black solid;
     text-align: center;
     margin: auto;
+    border-radius: 10px;
 }
 
 .player1Idle {

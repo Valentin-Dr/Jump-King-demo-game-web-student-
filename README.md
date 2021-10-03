@@ -17,3 +17,6 @@ Avoid every enemies, press F5 to restart the game
 - ...........
 - Added character selection screen
 - Added a button to launch the game
+
+### Background from Slotopaint GameDesign
+### Game background from Adobe Stock
