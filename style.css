@@ -21,12 +21,64 @@
 
 }
 
+.hidden {
+    display: none;
+}
+
+#startGame {
+    display: block;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 3em;
+    text-align: center;
+    border: 1px black solid;
+}
+
+#choosePlayer {
+    margin: auto;
+    margin-top: 50px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#playerContainer {
+    display: flex;
+    width: 200px;
+    margin: auto;
+}
+
+#player1, #player2, #player3 {
+    height: 32px;
+    width: 32px;
+    border: 1px black solid;
+    text-align: center;
+    margin: auto;
+}
+
+.player1Idle {
+    background: url('sprites/Pink_Monster_Walk_6.png');
+    animation: spritePlayer 0.8s steps(6) infinite;
+}
+
+.player2Idle {
+    background: url('sprites/2_Owlet_Monster/Owlet_Monster_Walk_6.png');
+    animation: spritePlayer 0.8s steps(6) infinite;
+}
+
+.player3Idle {
+    background: url('sprites/3_Dude_Monster/Dude_Monster_Walk_6.png');
+    animation: spritePlayer 0.8s steps(6) infinite;
+}
+
 #game {
     margin: auto;
     width: 700px;
     height: 350px;
     border: 1px black solid;
     background: url('sprites/backgroundgame.jpg');
+    overflow: hidden;
 }
 
 #gameOver {
@@ -42,7 +94,7 @@
 }
 
 .gameOverAnimate {
-    animation: opacity 8s;
+    animation: opacity 6s;
 }
 
 /* Joueur */
@@ -54,24 +106,68 @@
     left: 0px;
 }
 
-.playerRun {
-    background: url('sprites/Pink_Monster_Run_6.png');
+.playerRun, .player2Run, .player3Run {
     animation: spritePlayer 0.4s steps(6) infinite;
+}
+
+.playerRun {
+    background: url('sprites/Pink_Monster_Run_6.png'); 
+}
+
+.player2Run {
+    background: url('sprites/2_Owlet_Monster/Owlet_Monster_Run_6.png');
+}
+
+.player3Run {
+    background: url('sprites/3_Dude_Monster/Dude_Monster_Run_6.png');
+}
+
+.playerJump, .player2Jump, .player3Jump {
+    animation: jump 500ms, jumpAnimation 500ms steps(8);
 }
 
 .playerJump {
     background: url('sprites/Pink_Monster_Jump_8.png');
-    animation: jump 500ms, jumpAnimation 500ms steps(8);
+}
+
+.player2Jump {
+    background: url('sprites/2_Owlet_Monster/Owlet_Monster_Jump_8.png');
+}
+
+.player3Jump {
+    background: url('sprites/3_Dude_Monster/Dude_Monster_Jump_8.png');
+}
+
+.playerDeath, .player2Death, .player3Death {
+    animation: playerDeath 2s steps(8);
 }
 
 .playerDeath {
     background: url('sprites/Pink_Monster_Death_8.png');
-    animation: playerDeath 2s steps(8);
+}
+
+.player2Death {
+    background: url('sprites/2_Owlet_Monster/Owlet_Monster_Death_8.png');
+}
+
+.player3Death {
+    background: url('sprites/3_Dude_Monster/Dude_Monster_Death_8.png');
+}
+
+.playerWin, .player2Win, .player3Win {
+    animation: spritePlayer 0.8s steps(6) infinite, playerWin 6s linear;
 }
 
 .playerWin {
     background: url('sprites/Pink_Monster_Walk_6.png');
-    animation: spritePlayer 0.8s steps(6) infinite, playerWin 8s linear;
+}
+
+.player2Win {
+    background: url('sprites/2_Owlet_Monster/Owlet_Monster_Walk_6.png');
+}
+
+.player3Win {
+    background: url('sprites/3_Dude_Monster/Dude_Monster_Walk_6.png');
 }
 
 /* Ennemis */

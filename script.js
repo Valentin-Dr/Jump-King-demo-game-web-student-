@@ -30,6 +30,54 @@ const enemy = document.getElementById('enemy');
 // Je récupère mon ID score
 const scores = document.getElementById('score');
 
+const startGame = document.getElementById('startGame');
+
+const choosePlayer = document.getElementById('choosePlayer');
+
+const startGameEvent = () => {
+    choosePlayer.classList.add('hidden');
+    startGame.style.display = 'none';
+    launchGame();
+
+}
+
+// Variable qui contiendra mon personnage
+let playerSelected = '';
+
+const player1 = document.getElementById('player1');
+const player2 = document.getElementById('player2');
+const player3 = document.getElementById('player3');
+
+// Fonctions pour changer mon personnage quand le joueur le demande
+const player1Chosen = () => {
+    playerSelected = '';
+    console.log('joueur 1');
+    playerSelected = 'player';
+    console.log(playerSelected);
+    return playerSelected;
+};
+
+const player2Chosen = () => {
+    playerSelected = '';
+    playerSelected = 'player2';
+    console.log(playerSelected);
+    return playerSelected;
+}
+
+const player3Chosen = () => {
+    playerSelected = '';
+    playerSelected = 'player3';
+    console.log(playerSelected);
+    return playerSelected;
+};
+
+// Events sur mes personnages pour les changer en jeu
+player1.addEventListener('click', player1Chosen);
+player2.addEventListener('click', player2Chosen);
+player3.addEventListener('click', player3Chosen);
+
+startGame.addEventListener('click', startGameEvent);
+
 // Je crée mon score
 let score = 0;
 
@@ -44,15 +92,18 @@ scores.appendChild(scoreAmount);
 // Fonction pour faire sauter le joueur
 // Que je mets en onclick sur la page html
 const jump = () => {
-    playerRemoveClass('playerRun');
-    if (player.classList != 'playerJump') {
-        playerAddClass('playerJump');
+    player.className = '';
+    if (player.classList != `${playerSelected}Jump`) {
+        playerAddClass(`${playerSelected}Jump`);
     }
     setTimeout(function () {
-        playerAddClass('playerRun');
-        playerRemoveClass('playerJump');
+        playerAddClass(`${playerSelected}Run`);
+        playerRemoveClass(`${playerSelected}Jump`);
     }, 500)
 };
+
+// Fonction pour lancer mon jeu
+const launchGame = () => {
 
 // Ajoute un point toutes les secondes
 const countScores = setInterval(function () {
@@ -73,18 +124,18 @@ enemy.classList.add(`enemy${starterEnemy}`);
 
 // Fait gagner le joueur s'il arrive à 100
 const checkVictory = setInterval(function () {
-    if (scoreAmount.textContent === '100') {
+    if (scoreAmount.textContent === '3') {
         gameOver.textContent = 'VICTOIRE BRAVO';
         gameOver.classList.add('gameOverAnimate');
         enemy.style.display = 'none';
         clearInterval(enemySpeed);
         clearInterval(countScores);
         player.className = '';
-        player.classList.add('playerWin');
+        player.classList.add(`${playerSelected}Win`);
         setTimeout(function () {
             player.className = '';
             alert(`Allez les XIII`);
-        }, 8000);
+        }, 6000);
         clearInterval(checkVictory);
     }
 }, 10)
@@ -123,7 +174,7 @@ const checkDeath = setInterval(function () {
     if (enemyLeft < 32 && enemyLeft > 0 && playerTop >= 172) {
         player.className = '';
         gameOver.classList.add('gameOverAnimate');
-        playerAddClass('playerDeath');
+        playerAddClass(`${playerSelected}Death`);
         enemy.style.display = 'none';
         clearInterval(countScores);
         setTimeout(function () {
@@ -132,3 +183,6 @@ const checkDeath = setInterval(function () {
         }, 2000);
     }
 }, 10);
+};
+
+// launchGame();
