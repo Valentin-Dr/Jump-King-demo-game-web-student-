@@ -3,7 +3,7 @@
 ## Left click to jump
 Avoid every enemies, press F5 to restart the game
 
-<img src="https://i.imgur.com/2GwyMgD.gif"/>
+<img src="https://i.imgur.com/AJGYnPv.gif"/>
 
 ## Try to avoid enemies for 100 seconds !
 
